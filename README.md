@@ -11,6 +11,12 @@
 
 Visit the platform: **[LKHN Hackathon Platform](https://your-deployment-url.com)** *(deployment coming soon)*
 
+### 🚀 Quick Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FtheCephusHasLanded%2FHackathon&env=VITE_SUPABASE_URL,VITE_SUPABASE_ANON_KEY&envDescription=Supabase%20credentials%20required&envLink=https%3A%2F%2Fsupabase.com%2Fdocs%2Fguides%2Fgetting-started)
+
+**Prerequisites:** Create a [Supabase](https://supabase.com) project and run the schema from `supabase/schema.sql`
+
 ## 📋 Table of Contents
 
 - [Overview](#-overview)
