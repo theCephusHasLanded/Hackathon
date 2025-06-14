@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKHN Technologies Hackathon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+        }
+
+        .projects-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .project-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .project-status {
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .status-planning {
+            background: #ffd93d;
+            color: #b8860b;
+        }
+
+        .status-active {
+            background: #6bcf7f;
+            color: #2d5a3d;
+        }
+
+        .status-future {
+            background: #a8e6cf;
+            color: #2d5a3d;
+        }
+
+        .join-project {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+
+        .join-project:hover {
+            background: #5a67d8;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>LKHN Technologies Hackathon</h1>
+            <p>Building the future through innovation and collaboration. Join our community of builders creating solutions for tomorrow.</p>
+
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Participants</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">$100K</span>
+                    <span class="stat-label">Prize Pool</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24</span>
+                    <span class="stat-label">Active Projects</span>
+                </div>
+            </div>
+            
+            <button class="cta-button" onclick="scrollToProjects()">Explore Projects</button>
+        </div>
+
+        <div class="projects-section" id="projects">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3 class="project-title">AI-Powered Data Pipeline</h3>
+                    <p class="project-description">Build an intelligent data processing system that automatically optimizes massive datasets with minimal resource usage. Focus on clean architecture and performance.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">AI/ML</span>
+                        <span class="tag">Data Engineering</span>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-status status-active">Active</span>
+                        <button class="join-project">Join Project</button>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Minimalist Analytics Dashboard</h3>
+                    <p class="project-description">Create a clean, intuitive dashboard that displays complex analytics through simple visualizations. Emphasis on user experience and performance.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">D3.js</span>
+                        <span class="tag">UI/UX</span>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-status status-planning">Planning</span>
+                        <button class="join-project">Join Project</button>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Micro-Service Architecture Framework</h3>
+                    <p class="project-description">Design a lightweight framework for building scalable microservices with built-in monitoring, logging, and deployment automation.</p>
+                    <div class="project-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">DevOps</span>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-status status-active">Active</span>
+                        <button class="join-project">Join Project</button>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Smart City IoT Platform</h3>
+                    <p class="project-description">Develop an IoT platform for smart city infrastructure with real-time monitoring, predictive maintenance, and energy optimization.</p>
+                    <div class="project-tags">
+                        <span class="tag">IoT</span>
+                        <span class="tag">Edge Computing</span>
+                        <span class="tag">Sustainability</span>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-status status-future">Future</span>
+                        <button class="join-project">Join Project</button>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Blockchain Document Verification</h3>
+                    <p class="project-description">Build a simple, secure system for document verification using blockchain technology with focus on privacy and user accessibility.</p>
+                    <div class="project-tags">
+                        <span class="tag">Blockchain</span>
+                        <span class="tag">Cryptography</span>
+                        <span class="tag">Security</span>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-status status-planning">Planning</span>
+                        <button class="join-project">Join Project</button>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Voice-Controlled Dev Environment</h3>
+                    <p class="project-description">Create a voice-controlled development environment that allows developers to navigate code, run tests, and deploy applications hands-free.</p>
+                    <div class="project-tags">
+                        <span class="tag">Voice AI</span>
+                        <span class="tag">Developer Tools</span>
+                        <span class="tag">Accessibility</span>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-status status-future">Future</span>
+                        <button class="join-project">Join Project</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function scrollToProjects() {
+            document.getElementById('projects').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Add interactive effects
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Project join functionality
+        document.querySelectorAll('.join-project').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const projectTitle = this.closest('.project-card').querySelector('.project-title').textContent;
+                alert(`Joining project: ${projectTitle}\n\nYou'll be redirected to the project workspace.`);
+            });
+        });
+
+        // Add some dynamic stats animation
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const finalValue = stat.textContent;
+                const numericValue = parseInt(finalValue.replace(/[^\d]/g, ''));
+                let current = 0;
+                const increment = numericValue / 50;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= numericValue) {
+                        stat.textContent = finalValue;
+                        clearInterval(timer);
+                    } else {
+                        if (finalValue.includes('K')) {
+                            stat.textContent = Math.floor(current / 1000) + 'K+';
+                        } else if (finalValue.includes('$')) {
+                            stat.textContent = '$' + Math.floor(current / 1000) + 'K';
+                        } else {
+                            stat.textContent = Math.floor(current);
+                        }
+                    }
+                }, 50);
+            });
+        }
+
+        // Start animation when page loads
+        window.addEventListener('load', () => {
+            setTimeout(animateStats, 500);
+        });
+    </script>
+</body>
+</html>

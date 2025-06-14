@@ -1,0 +1,248 @@
+.project-detail {
+  min-height: calc(100vh - 80px);
+  background: white;
+  padding: 40px 0;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 2px solid #667eea;
+  color: #667eea;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.back-button:hover {
+  background: #667eea;
+  color: white;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.project-title-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.project-badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.project-status {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.difficulty-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.join-button-large {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+  white-space: nowrap;
+}
+
+.join-button-large:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+}
+
+.project-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+.project-main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.project-description-section h2,
+.project-objectives h2,
+.technologies-section h2,
+.prerequisites-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 16px;
+}
+
+.project-description-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+.project-objectives ul,
+.prerequisites-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.project-objectives li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.project-objectives li svg {
+  color: #28a745;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.prerequisites-section li {
+  margin-bottom: 8px;
+  color: #555;
+  padding-left: 20px;
+  position: relative;
+}
+
+.prerequisites-section li::before {
+  content: '•';
+  color: #667eea;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-tag {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.project-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.project-info-card,
+.project-tags-card {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #e9ecef;
+}
+
+.project-info-card h3,
+.project-tags-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.info-item svg {
+  color: #667eea;
+  flex-shrink: 0;
+}
+
+.info-item div {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 2px;
+}
+
+.info-value {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.tags-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tags-list .tag {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (max-width: 968px) {
+  .project-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .project-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .project-title-section h1 {
+    font-size: 2rem;
+  }
+}
